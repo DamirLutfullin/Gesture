@@ -1,24 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gesture" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monkey" translatesAutoresizingMaskIntoConstraints="NO" id="CDr-08-CxI">
+                                <rect key="frame" x="218" y="671" width="176" height="191"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="176" id="2sy-jE-qAw"/>
+                                    <constraint firstAttribute="height" constant="191" id="VZt-y6-4iA"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Pz6-b3-dfE" appends="YES" id="dLu-U6-1Jc"/>
+                                    <outletCollection property="gestureRecognizers" destination="6Cl-7v-poG" appends="YES" id="0kT-0N-q4w"/>
+                                    <outletCollection property="gestureRecognizers" destination="LFM-KW-OI2" appends="YES" id="NFw-Km-dlN"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banana" translatesAutoresizingMaskIntoConstraints="NO" id="7rh-9N-V1c">
+                                <rect key="frame" x="20" y="44" width="137" height="149"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Kh3-Kl-hOY" appends="YES" id="di8-vL-Kee"/>
+                                    <outletCollection property="gestureRecognizers" destination="EXe-iv-jmC" appends="YES" id="djv-mI-Mxo"/>
+                                    <outletCollection property="gestureRecognizers" destination="HTe-lk-GBk" appends="YES" id="YgS-e1-4gh"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CDr-08-CxI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="NYS-sx-fN3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CDr-08-CxI" secondAttribute="trailing" constant="20" id="qdK-8X-2TB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bananaPan" destination="Kh3-Kl-hOY" id="4O2-CF-IL2"/>
+                        <outlet property="monkeyPan" destination="Pz6-b3-dfE" id="fj2-C3-AH4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Pz6-b3-dfE">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="Wup-XL-ZxF"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Gmo-G7-MYE"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="6Cl-7v-poG">
+                    <connections>
+                        <action selector="handlePinch:" destination="BYZ-38-t0r" id="VyP-SV-c0F"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="guJ-cb-shn"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="LFM-KW-OI2">
+                    <connections>
+                        <action selector="handleRotate:" destination="BYZ-38-t0r" id="3mW-Md-6MM"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Ssd-R2-xqa"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Kh3-Kl-hOY">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="q6Q-z8-Mdm"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="9LK-7x-1J6"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="EXe-iv-jmC">
+                    <connections>
+                        <action selector="handlePinch:" destination="BYZ-38-t0r" id="uzn-tt-QzE"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="UbD-Ax-3bX"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="HTe-lk-GBk">
+                    <connections>
+                        <action selector="handleRotate:" destination="BYZ-38-t0r" id="Qaj-t5-nxk"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="8O3-JQ-ClF"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="63.768115942028992" y="79.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="banana" width="200" height="200"/>
+        <image name="monkey" width="300" height="400"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

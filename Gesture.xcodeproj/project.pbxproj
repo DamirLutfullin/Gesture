@@ -13,6 +13,9 @@
 		304B914E2671B22400DCE238 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 304B914C2671B22400DCE238 /* Main.storyboard */; };
 		304B91502671B22600DCE238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 304B914F2671B22600DCE238 /* Assets.xcassets */; };
 		304B91532671B22600DCE238 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 304B91512671B22600DCE238 /* LaunchScreen.storyboard */; };
+		304B915E2671B30300DCE238 /* chomp.caf in Resources */ = {isa = PBXBuildFile; fileRef = 304B915C2671B30300DCE238 /* chomp.caf */; };
+		304B915F2671B30300DCE238 /* laugh.caf in Resources */ = {isa = PBXBuildFile; fileRef = 304B915D2671B30300DCE238 /* laugh.caf */; };
+		304B91612671DB2300DCE238 /* TickleGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B91602671DB2300DCE238 /* TickleGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		304B914F2671B22600DCE238 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		304B91522671B22600DCE238 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		304B91542671B22600DCE238 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		304B915C2671B30300DCE238 /* chomp.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = chomp.caf; sourceTree = "<group>"; };
+		304B915D2671B30300DCE238 /* laugh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = laugh.caf; sourceTree = "<group>"; };
+		304B91602671DB2300DCE238 /* TickleGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickleGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +66,30 @@
 				304B91482671B22400DCE238 /* SceneDelegate.swift */,
 				304B914A2671B22400DCE238 /* ViewController.swift */,
 				304B914C2671B22400DCE238 /* Main.storyboard */,
-				304B914F2671B22600DCE238 /* Assets.xcassets */,
-				304B91512671B22600DCE238 /* LaunchScreen.storyboard */,
-				304B91542671B22600DCE238 /* Info.plist */,
+				304B915A2671B2D800DCE238 /* SupportingFiles */,
+				304B91602671DB2300DCE238 /* TickleGestureRecognizer.swift */,
 			);
 			path = Gesture;
+			sourceTree = "<group>";
+		};
+		304B915A2671B2D800DCE238 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				304B91542671B22600DCE238 /* Info.plist */,
+				304B915B2671B2E600DCE238 /* AudioFiles */,
+				304B914F2671B22600DCE238 /* Assets.xcassets */,
+				304B91512671B22600DCE238 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		304B915B2671B2E600DCE238 /* AudioFiles */ = {
+			isa = PBXGroup;
+			children = (
+				304B915C2671B30300DCE238 /* chomp.caf */,
+				304B915D2671B30300DCE238 /* laugh.caf */,
+			);
+			path = AudioFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +149,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				304B915E2671B30300DCE238 /* chomp.caf in Resources */,
 				304B91532671B22600DCE238 /* LaunchScreen.storyboard in Resources */,
+				304B915F2671B30300DCE238 /* laugh.caf in Resources */,
 				304B91502671B22600DCE238 /* Assets.xcassets in Resources */,
 				304B914E2671B22400DCE238 /* Main.storyboard in Resources */,
 			);
@@ -140,6 +167,7 @@
 				304B914B2671B22400DCE238 /* ViewController.swift in Sources */,
 				304B91472671B22400DCE238 /* AppDelegate.swift in Sources */,
 				304B91492671B22400DCE238 /* SceneDelegate.swift in Sources */,
+				304B91612671DB2300DCE238 /* TickleGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +316,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQU76263MV;
-				INFOPLIST_FILE = Gesture/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Gesture/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +335,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQU76263MV;
-				INFOPLIST_FILE = Gesture/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Gesture/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
