@@ -36,7 +36,6 @@ class ViewController: UIViewController {
       return player
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let imageViews = view.subviews.filter {
@@ -63,8 +62,6 @@ class ViewController: UIViewController {
         chompPlayer = createPlayer(from: "chomp")
         laughPlayer = createPlayer(from: "laugh")
     }
-    
-    
     
     @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
         
@@ -121,6 +118,4 @@ extension ViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         true
     }
-    
 }
-
