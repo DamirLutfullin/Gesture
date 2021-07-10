@@ -17,25 +17,6 @@ class ViewController: UIViewController {
     private var chompPlayer: AVAudioPlayer?
     private var laughPlayer: AVAudioPlayer?
     
-    func createPlayer(from filename: String) -> AVAudioPlayer? {
-      guard let url = Bundle.main.url(
-        forResource: filename,
-        withExtension: "caf"
-        ) else {
-          return nil
-      }
-      var player = AVAudioPlayer()
-
-      do {
-        try player = AVAudioPlayer(contentsOf: url)
-        player.prepareToPlay()
-      } catch {
-        print("Error loading \(url.absoluteString): \(error)")
-      }
-
-      return player
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let imageViews = view.subviews.filter {
@@ -63,6 +44,25 @@ class ViewController: UIViewController {
         laughPlayer = createPlayer(from: "laugh")
     }
     
+    func createPlayer(from filename: String) -> AVAudioPlayer? {
+      guard let url = Bundle.main.url(
+        forResource: filename,
+        withExtension: "caf"
+        ) else {
+          return nil
+      }
+      var player = AVAudioPlayer()
+
+      do {
+        try player = AVAudioPlayer(contentsOf: url)
+        player.prepareToPlay()
+      } catch {
+        print("Error loading \(url.absoluteString): \(error)")
+      }
+
+      return player
+    }
+    
     @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
         
         let translation = gesture.translation(in: view)
@@ -78,7 +78,6 @@ class ViewController: UIViewController {
         
         gesture.setTranslation(.zero, in: view)
     }
-    
     
     @IBAction func handlePinch(_ gesture: UIPinchGestureRecognizer) {
         guard let gestureView = gesture.view else {
@@ -114,7 +113,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UIGestureRecognizerDelegate {
-    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         true
     }

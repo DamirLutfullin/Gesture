@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class ​TickleGestureRecognizer: UIGestureRecognizer {
     
     private let requiredTickles = 2
@@ -75,5 +74,4 @@ class ​TickleGestureRecognizer: UIGestureRecognizer {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
         reset()
     }
-
 }
